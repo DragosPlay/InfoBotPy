@@ -55,9 +55,42 @@ def function_3():
 
 def function_4():
     print("""
-Доступные действия: '+', '-', '*', '/', '//', '%'
+Доступные действия: '+', '-', '*', '**', '/', '//', '%'
 Для завершения введите: 'Exit' или 'Выход'
 """)
+
+    exits = ['Exit', 'exit', 'Выход', 'выход']
+
+    num_1 = input('Введите первое число: ')
+    if num_1 in exits:
+        return
+    action = input('Введите действие: ')
+    if num_1 in exits:
+        return
+    num_2 = input('Введите второе число: ')
+    if num_1 in exits:
+        return
+
+    num_1, num_2 = int(num_1), int(num_2)
+
+    if action == '+':
+        print(num_1 + num_2)
+    elif action == '-':
+        print(num_1 - num_2)
+    elif action == '*':
+        print(num_1 * num_2)
+    elif action == '**':
+        print(num_1 ** num_2)
+    elif action == '/' or action == '//' or action == '%':
+        if num_2 == 0:
+            print('Делить на ноль нельзя!')
+        else:
+            if action == '/':
+                print(num_1 / num_2)
+            elif action == '//':
+                print(num_1 // num_2)
+            elif action == '%':
+                print(num_1 % num_2)
 
 
 def function_5():
