@@ -17,7 +17,8 @@ def demo_of_functionality():
 
 def function_1():
     chars = string.ascii_letters + string.digits + string.punctuation
-    pass_len = int(input('Введите длину пароля: '))
+    pass_len = input('Введите длину пароля: ')
+
     password = ''.join(random.choices(chars, k=pass_len))
     print(f'Ваш пароль: {password}')
 
@@ -97,15 +98,46 @@ def function_5():
     coin_faces = [
         "Орёл", "Решка"
     ]
+    coin_faces_all = [
+        "Орёл", "Решка", "Орел", "орел", "решка"
+    ]
     selected_face = random.choice(coin_faces)
-    player_face = input('Орёл или решка? ')
+    player_face = ''
+    while player_face not in coin_faces_all:
+        player_face = input('Орёл или решка? ')
     if player_face.lower() == selected_face.lower() or (selected_face == 'О5рёл' and player_face.lower() == 'орел'):
         print(f'{selected_face}! Вы выиграли!')
     else:
         print(f'{selected_face}! Вы проиграли(')
 
 def function_6():
-    return
+    actions = [
+        "Камень", "Ножницы", "Бумага"
+    ]
+    actions_all = [
+        "Камень", "Ножницы", "Бумага", "камень", "ножницы", "бумага"
+    ]
+    selected_action = random.choice(actions)
+    print('Введите действие')
+    player_action = ''
+    while player_action not in actions_all:
+        player_action = input('Камень, ножницы, бумага: раз-два-три...  ')
+
+    if player_action.lower() == selected_action.lower():
+        print(f'{player_action.capitalize()} vs {selected_action}! Ничья!')
+    elif player_action.lower() == 'камень' and selected_action.lower() == 'ножницы':
+        print(f'{player_action.capitalize()} vs {selected_action}! Вы выиграли!')
+    elif player_action.lower() == 'камень' and selected_action.lower() == 'бумага':
+        print(f'{player_action.capitalize()} vs {selected_action}! Вы проиграли(')
+    elif  player_action.lower() == 'ножницы' and selected_action.lower() == 'бумага':
+        print(f'{player_action.capitalize()} vs {selected_action}! Вы выиграли!')
+    elif player_action.lower() == 'ножницы' and selected_action.lower() == 'камень':
+        print(f'{player_action.capitalize()} vs {selected_action}! Вы проиграли(')
+    elif  player_action.lower() == 'бумага' and selected_action.lower() == 'камень':
+        print(f'{player_action.capitalize()} vs {selected_action}! Вы выиграли!')
+    elif player_action.lower() == 'бумага' and selected_action.lower() == 'ножницы':
+        print(f'{player_action.capitalize()} vs {selected_action}! Вы проиграли(')
+
 
 actions = {
     '1': function_1,
