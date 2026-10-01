@@ -94,7 +94,15 @@ def function_4():
 
 
 def function_5():
-    return
+    coin_faces = [
+        "Орёл", "Решка"
+    ]
+    selected_face = random.choice(coin_faces)
+    player_face = input('Орёл или решка? ')
+    if player_face.lower() == selected_face.lower() or (selected_face == 'О5рёл' and player_face.lower() == 'орел'):
+        print(f'{selected_face}! Вы выиграли!')
+    else:
+        print(f'{selected_face}! Вы проиграли(')
 
 def function_6():
     return
