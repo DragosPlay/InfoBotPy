@@ -14,13 +14,23 @@ def demo_of_functionality():
 ''')
 
 def function_1():
-    password = ''
+    chars = string.ascii_letters + string.digits + string.punctuation
+    pass_len = int(input('Введите длину пароля: '))
+    password = ''.join(random.choices(chars, k=pass_len))
+    print(f'Ваш пароль: {password}')
 
-
-    print(password)
 
 def function_2():
-    return
+    movies = [
+        "Интерстеллар", "Матрица", "Бегущий по лезвию 2049", "Начало",
+        "Безумный Макс: Дорога ярости", "Терминатор 2: Судный день", "Криминальное чтиво", "Карты, деньги, два ствола",
+        "Большой куш", "Бешеные псы", "Драйв", "Леон",
+        "Бойцовский клуб", "Остров проклятых", "Престиж", "Семь",
+        "Молчание ягнят", "Помни", "Темный рыцарь", "Побег из Шоушенка",
+        "Гладиатор", "Джанго освобожденный", "Таксист", "Большой Лебовски"
+    ]
+    selected_movie = random.choice(movies)
+    print(f'Рекомендуем посмотреть: {selected_movie}2')
 
 def function_3():
     return
